@@ -88,6 +88,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 - **Hold-out set:** 15% dos dados nunca são vistos durante treino/validação
 - **Reprodutibilidade:** `random_state=10` garante resultados consistentes
 
+obs: `random_state=42` é usado nos modelos, e no embaralhamento no pré-processamento.
+
 ### **3. Vetorização (TF-IDF)**
 
 Usamos **TF-IDF (Term Frequency-Inverse Document Frequency)** integrado ao pipeline via `GridSearchCV`:
