@@ -1,4 +1,4 @@
-# 🔤 Classificação de Estilos Textuais com PLN
+# Classificação de Estilos Textuais com PLN - Versículos Bíblicos
 
 Repositório desenvolvido para o **Exercício Programa (EP)** da disciplina de **Processamento de Língua Natural (PLN)** - EACH USP.
 
@@ -87,6 +87,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 - **Stratified split:** Mantém proporção 50/50 em treino e teste
 - **Hold-out set:** 15% dos dados nunca são vistos durante treino/validação
 - **Reprodutibilidade:** `random_state=10` garante resultados consistentes
+
+obs: `random_state=42` é usado nos modelos, e no embaralhamento do pré-processamento.
 
 ### **3. Vetorização (TF-IDF)**
 
