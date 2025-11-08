@@ -278,7 +278,7 @@ pip install pandas numpy scikit-learn jupyter notebook
 
 ## **Autores**
 
-- Brunão Friedrich
+- Bruno Friedrich
 - Lucas Ferracin
 - Pablo Assunção
 - Yannis Pontuschka
