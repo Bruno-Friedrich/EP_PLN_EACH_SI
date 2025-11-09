@@ -1,16 +1,41 @@
-# Bibliotecas necessárias para o projeto EP PLN - Classificação de Estilos Textuais
+# ==============================================================================
+# EP PLN - Classificação de Estilos Textuais (TF-IDF, MLP, BERT)
+# ==============================================================================
 
 # Manipulação de dados
 pandas>=1.3.0
 numpy>=1.21.0
 
 # Machine Learning
-scikit-learn>=1.0.0
+scikit-learn>=1.4.2  # TF-IDF, LogisticRegression, GridSearchCV
 
-# Jupyter Notebook
+# Visualização
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Explicabilidade
+eli5>=0.13.0  # Análise de features importantes
+
+# Deep Learning - TensorFlow/Keras (MLP)
+tensorflow==2.18.0  # TensorFlow 2.18 (CPU-only OK para MLP)
+tf-keras==2.18.0  # Compatibilidade Keras 2.x para Transformers
+scikeras>=0.13.0  # Wrapper Keras para scikit-learn
+
+# Deep Learning - PyTorch (BERT)
+torch>=2.0.0  # PyTorch - instalar com CUDA: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Transformers (BERT)
+transformers>=4.30.0  # Modelos BERT e tokenizers
+datasets>=2.10.0  # Manipulação de datasets
+tokenizers>=0.13.0  # Tokenizadores rápidos
+
+# Jupyter
 jupyter>=1.0.0
 notebook>=6.4.0
-
-# Utilitários
 ipython>=7.0.0
 
+# Utilitários
+tqdm>=4.65.0  # Barras de progresso
+requests>=2.28.0  # Download de modelos
