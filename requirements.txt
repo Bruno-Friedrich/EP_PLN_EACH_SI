@@ -33,7 +33,8 @@ torch>=2.6.0
 # Transformers (BERT)
 transformers>=4.30.0  #
 datasets>=2.10.0 
-tokenizers>=0.13.0 
+tokenizers>=0.13.0
+accelerate>=0.26.0  # Necessário para Trainer com PyTorch 
 
 # Jupyter
 jupyter>=1.0.0
