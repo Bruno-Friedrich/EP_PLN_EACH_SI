@@ -22,10 +22,8 @@ tf-keras==2.18.0
 scikeras>=0.13.0  
 # Deep Learning - PyTorch (BERT)
 #para nao instalar a versao com GPU, use apenas torch, torchvision e torchaudio sem o --index-url
---extra-index-url https://download.pytorch.org/whl/cu121
+#--extra-index-url https://download.pytorch.org/whl/cu121
 torch>=2.0.0
-torchvision>=0.15.0
-torchaudio>=2.0.0
 
 # Transformers (BERT)
 transformers>=4.30.0  #
@@ -36,6 +34,9 @@ tokenizers>=0.13.0
 jupyter>=1.0.0
 notebook>=6.4.0
 ipython>=7.0.0
+
+# Word Embeddings (Word2Vec)
+gensim>=4.3.0
 
 # Utilitários
 tqdm>=4.65.0  
