@@ -18,20 +18,19 @@ eli5>=0.13.0  # Análise de features importantes
 
 # Deep Learning - TensorFlow/Keras (MLP)
 tensorflow==2.18.0  # TensorFlow 2.18.0
-keras==2.18.0  # Keras 2.18.0
-
+tf-keras==2.18.0 
+scikeras>=0.13.0  
 # Deep Learning - PyTorch (BERT)
-# NOTA: Para instalar PyTorch com CUDA 12.1, use:
-# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-# Ou instale manualmente após instalar os outros pacotes
+#para nao instalar a versao com GPU, use apenas torch, torchvision e torchaudio sem o --index-url
+--extra-index-url https://download.pytorch.org/whl/cu121
 torch>=2.0.0
 torchvision>=0.15.0
 torchaudio>=2.0.0
 
 # Transformers (BERT)
-transformers>=4.30.0  # Modelos BERT e tokenizers
-datasets>=2.10.0  # Manipulação de datasets
-tokenizers>=0.13.0  # Tokenizadores rápidos
+transformers>=4.30.0  #
+datasets>=2.10.0 
+tokenizers>=0.13.0 
 
 # Jupyter
 jupyter>=1.0.0
@@ -39,5 +38,5 @@ notebook>=6.4.0
 ipython>=7.0.0
 
 # Utilitários
-tqdm>=4.65.0  # Barras de progresso
-requests>=2.28.0  # Download de modelos
+tqdm>=4.65.0  
+requests>=2.28.0  
