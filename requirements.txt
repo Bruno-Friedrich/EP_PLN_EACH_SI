@@ -21,9 +21,14 @@ tensorflow==2.18.0  # TensorFlow 2.18.0
 tf-keras==2.18.0 
 scikeras>=0.13.0  
 # Deep Learning - PyTorch (BERT)
-#para nao instalar a versao com GPU, use apenas torch, torchvision e torchaudio sem o --index-url
-#--extra-index-url https://download.pytorch.org/whl/cu121
-torch>=2.0.0
+# IMPORTANTE: Para instalar PyTorch 2.6+ a GPU NVIDIA, use:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+# 
+# Para instalar sem GPU (CPU apenas):
+#   pip install torch
+#
+# Versão mínima: 2.6.0 (necessário para resolver vulnerabilidade CVE-2025-32434)
+torch>=2.6.0
 
 # Transformers (BERT)
 transformers>=4.30.0  #
