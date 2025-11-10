@@ -17,17 +17,46 @@ seaborn>=0.11.0
 eli5>=0.13.0  # Análise de features importantes
 
 # Deep Learning - TensorFlow/Keras (MLP)
-tensorflow==2.18.0  # TensorFlow 2.18.0
+# ==============================================================================
+# INSTALAÇÃO DO TENSORFLOW COM GPU:
+# ==============================================================================
+# 
+# OPÇÃO 1: TensorFlow com suporte GPU (RECOMENDADO se você tem GPU NVIDIA)
+#   pip install tensorflow[and-cuda]
+#   OU
+#   pip install tensorflow==2.18.0
+#   pip install nvidia-cudnn-cu12==9.1.0.70
+#
+# OPÇÃO 2: TensorFlow apenas CPU (se não tem GPU ou quer usar CPU)
+#   pip install tensorflow==2.18.0
+#
+# VERIFICAR COMPATIBILIDADE:
+#   - TensorFlow 2.18.0 requer CUDA 12.x
+#   - Verifique: https://www.tensorflow.org/install/source#gpu
+#   - Verifique GPU: nvidia-smi
+#
+# NOTA: Se instalar tensorflow[and-cuda], não precisa instalar tensorflow separadamente
+# ==============================================================================
+tensorflow==2.18.0  # TensorFlow 2.18.0 (instale com [and-cuda] para GPU)   
 tf-keras==2.18.0 
 scikeras>=0.13.0  
 # Deep Learning - PyTorch (BERT)
-# IMPORTANTE: Para instalar PyTorch 2.6+ a GPU NVIDIA, use:
-#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+# ==============================================================================
+# INSTALAÇÃO DO PYTORCH COM GPU:
+# ==============================================================================
 # 
-# Para instalar sem GPU (CPU apenas):
+# OPÇÃO 1: PyTorch com suporte GPU NVIDIA (RECOMENDADO se você tem GPU)
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+#   (para CUDA 12.4)
+#   OU
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+#   (para CUDA 12.1)
+#
+# OPÇÃO 2: PyTorch apenas CPU (se não tem GPU)
 #   pip install torch
 #
 # Versão mínima: 2.6.0 (necessário para resolver vulnerabilidade CVE-2025-32434)
+# ==============================================================================
 torch>=2.6.0
 
 # Transformers (BERT)
@@ -46,4 +75,36 @@ gensim>=4.3.0
 
 # Utilitários
 tqdm>=4.65.0  
-requests>=2.28.0  
+requests>=2.28.0
+
+# ==============================================================================
+# INSTRUÇÕES DE INSTALAÇÃO
+# ==============================================================================
+#
+# PASSO 1: Verificar se você tem GPU NVIDIA
+#   nvidia-smi
+#   Se mostrar informações da GPU, você pode usar GPU. Caso contrário, use CPU.
+#
+# PASSO 2: Instalar dependências básicas (sem GPU)
+#   pip install -r requirements.txt
+#
+# PASSO 3: Instalar TensorFlow com GPU (SE VOCÊ TEM GPU)
+#   pip install tensorflow[and-cuda]
+#   OU
+#   pip install tensorflow==2.18.0
+#   pip install nvidia-cudnn-cu12==9.1.0.70
+#
+# PASSO 4: Instalar PyTorch com GPU (SE VOCÊ TEM GPU)
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+#   (ajuste cu124 para sua versão de CUDA: cu121, cu118, etc.)
+#
+# PASSO 5: Verificar instalação
+#   python -c "import tensorflow as tf; print('TensorFlow:', tf.__version__); print('GPUs:', tf.config.list_physical_devices('GPU'))"
+#   python -c "import torch; print('PyTorch:', torch.__version__); print('CUDA disponível:', torch.cuda.is_available())"
+#
+# NOTAS:
+#   - Se não tem GPU, pule os passos 3 e 4 (use versões CPU padrão)
+#   - TensorFlow 2.18.0 requer CUDA 12.x
+#   - PyTorch 2.6+ requer CUDA 11.8+ ou 12.x
+#   - Verifique compatibilidade: https://www.tensorflow.org/install/source#gpu
+# ==============================================================================  
